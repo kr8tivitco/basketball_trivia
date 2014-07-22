@@ -1,0 +1,118 @@
+
+/*///////////////////CENTER///////////////////////////////////// */
+
+/*This BOX ist centered and adjusts itself to the browser window.
+The height ajusts itself to the content.*/
+/*///////////////////CENTER///////////////////////////////////// */
+/*Temporary Outline Outline*/
+* {
+	outline: 1px dotted black;
+
+}
+
+body {
+background-color: #e1ddd9;
+font-size: 12px;
+font-family: Verdana, Arial, Helvetica, SunSans-Regular, Sans-Serif;
+color:#564b47;
+margin: 0px 140px  20px 140px;
+text-align: center;
+}
+
+#content {
+	/*width: 100%;
+	padding: 0px;
+	text-align: left;
+	background-color: #ee3e64;
+	overflow: auto;*/
+
+			/*vertical-align: middle;
+			margin: 0px auto;
+			/*padding: 0px;
+			width: 100%;*/
+
+	background-image:url('images/basketballcourt900x549.png');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center; 
+	background-size: contain;
+
+	
+	/*height: 810px;*/
+
+}
+#quesBox {
+	background-color: #B5DBE6;
+
+	width: 60%;
+	margin-left: 20%;
+	/*margin-top: 5%;*/
+	right: 80%;
+	height:100px;
+}
+#ansBox {
+	background-color: #FFF;	
+
+	width: 60%;
+	margin-left: 20%;
+	right: 80%;
+	height:100px;
+}
+
+#scoreBox {
+	background-color: #B5DBE6;
+
+	width: 60%;
+	margin-left: 20%;
+	right: 80%;
+	height:100px;
+}
+
+#bottomBox {
+	width: 60%;
+	margin-left: 20%;
+	right: 80%;
+
+	/*background-color: #FFF;	*/
+
+	height:300px;
+
+	/*opacity:0.65;*/
+}
+.startBtn {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #599bb3));
+	background:-moz-linear-gradient(top, #599bb3 5%, #599bb3 100%);
+	background:-webkit-linear-gradient(top, #599bb3 5%, #599bb3 100%);
+	background:-o-linear-gradient(top, #599bb3 5%, #599bb3 100%);
+	background:-ms-linear-gradient(top, #599bb3 5%, #599bb3 100%);
+	background:linear-gradient(to bottom, #599bb3 5%, #599bb3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#599bb3',GradientType=0);
+	background-color:#599bb3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:20px;
+	padding:5px 14px;
+	text-decoration:none;
+}
+.startBtn:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #599bb3));
+	background:-moz-linear-gradient(top, #599bb3 5%, #599bb3 100%);
+	background:-webkit-linear-gradient(top, #599bb3 5%, #599bb3 100%);
+	background:-o-linear-gradient(top, #599bb3 5%, #599bb3 100%);
+	background:-ms-linear-gradient(top, #599bb3 5%, #599bb3 100%);
+	background:linear-gradient(to bottom, #599bb3 5%, #599bb3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#599bb3',GradientType=0);
+	background-color:#599bb3;
+}
+.startBtn:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* /////////// BASKETBALL COURT PNG COLORS///////////////
+// ORANGE: #ED890E;		LT BLUE: #B5DBE6;			   //
+// GREEN: #9BBA59;		DRK BLUE: #33859C;			   //
+///////////////////////////////////////////////////////*/
