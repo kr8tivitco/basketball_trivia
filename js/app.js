@@ -1,6 +1,37 @@
 $(document).ready(function() {
+////////////////Global Variable Initialization////////////////////////////////
+  var arr = [];
+  var j =0;
+  var askNum;// =arr[j];
+  var correctNum =0;
+  var incorrectNum =0;
+  var playerAnsw =[];
+  var k =0;
+  //var quesNum;
 
-var questions = [{
+/////////////////////////Random Number Array//////////////////////////////////////
+  var randNumFunc = function () {
+    
+    while(arr.length < 5){
+      
+      var randomnumber=Math.ceil(Math.random()*(10 - arr.length)), i;
+    
+        for(i=0; i < arr.length; i++) {
+    
+          if(arr[i] <= randomnumber) randomnumber++;
+    
+          else break;
+        }
+
+      arr.splice(i, 0, randomnumber);
+    }
+
+    return arr;
+  };  
+
+/////////////////////////////////////////////////////////////////////////////
+
+    var questions = [{
         ques: "Which player has scored the most career points in the NBA?",
         opt: ["Michael Jordan", "Kareen Abdul Jabar", "Karl Malone", "Wilt Chamberlin"],
         qNum : 0,
@@ -9,9 +40,9 @@ var questions = [{
        },
        {
         ques: "Which NBA team plays its games at the AT&T Center",
-        opt: ["Denver Nuggets", "Washington Wizards", "San Antonio Spurs", "Atlanta Hawks"],
+        opt: ["Denver Nuggets", "Atlanta Hawks", "Washington Wizards", "San Antonio Spurs"],
         qNum : 1,
-        answ : 2,
+        answ : 3,
         fact: "Opened in 2002, the AT&T Center is home to the San Antonio Spurs."
        },
        {
@@ -76,5 +107,61 @@ var questions = [{
         qNum : 10,
         answ : 2,
         fact: "Carmelo Anthony scored 20 points and gathered 10 rebounds in the finals game"
-       }];});
+       }];
+/////////////////////////////////////////////////////////////////////////////
+  
 
+  //var newGame = function () {
+
+    // Run randNumFunc to generate 5 random numbers that correspond to the above questions
+      randNumFunc();
+
+
+    $(".startBtn").click(function() {
+    //$("nextBtn").click(playGame);
+      //alert(arr);
+      //var ask = prompt("Enter Number 0-10", "");
+      //alert (questions[ask].ques);
+      //function playGame () {
+        //var j =0;
+       askNum = arr[j];
+        alert(askNum);
+
+        //$("#question").html(questions[ask].ques); WORKING
+
+        $("#quesBox").html(questions[askNum].ques);
+      
+        $("#opt0").html(questions[askNum].opt[0]);
+        //alert("option 0");
+        $("#opt1").html(questions[askNum].opt[1]);
+        //alert("option 1");
+        $("#opt2").html(questions[askNum].opt[2]);
+        //alert("option 2");
+        $("#opt3").html(questions[askNum].opt[3]);
+        //alert("option 3");
+
+        j++;
+
+        $("#totalNum").html(j);
+    });
+
+        $(".nextBtn").click(function () { 
+          alert(askNum);
+          if (($('input[type="radio"]:checked').val()) == questions[askNum].answ){
+            playerAnsw[k] = $('input[type="radio"]:checked').val();
+            k++;
+            correctNum++;
+          } else {
+            incorrect++;
+          }
+            alert(($('input[name="radioBtn[]"]:checked').val()) +" == "+ questions[askNum].answ + "   Array PlayerAnswer = " + playerAnsw);
+            
+
+           $("#fact").html(questions[askNum].fact);
+              //alert(questions[askNum].fact);
+        
+        });
+
+});
+
+  

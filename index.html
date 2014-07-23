@@ -7,7 +7,7 @@
 		<!-- Title -->
 			<title>BASKETBALL TRIVIA</title>
 			
-		<!-- Stylesheets -->
+		<!--CSS Stylesheets -->
 			<link rel="stylesheet" href="css/reset.css">
 			<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,900italic' rel='stylesheet' type='text/css'>
 			<link rel="stylesheet" href="css/style.css"/> 
@@ -15,15 +15,39 @@
 		
 			<!--MOVE THE SCRIPTS TO THE END OF THE HTML PROGRAM -->
 			<script src="http://code.jquery.com/jquery.min.js"></script>
-			<script src="js/app.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<script type="text/javascript" src="js/app.js"></script>
 
 </head>
 
 <body>
 		<div id="content">CONTENT
-			<div id="quesBox"><span id="ques"></span></div>
-			<div id="ansBox">ansBox<span></span></div>
-			<div id="scoreBox">scoreBox<span></span></div>
+			<div id="quesBox">
+				<span id="question"></span>
+			</div>
+			<div id="ansBox">
+
+				<table><tr><td>
+					<input type="radio" name="radioBtn[]" id="radio1" class="css-checkbox" value="0" /><label for="radio1" class="css-label radGroup1"><span id="opt0"></span></label> <!--</td><td>-->
+				
+					<input type="radio" name="radioBtn[]" id="radio2" class="css-checkbox" value="1"/><label for="radio2" class="css-label radGroup1"><span id="opt1"></span></label></td><td>
+				
+					<input type="radio" name="radioBtn[]" id="radio3" class="css-checkbox" value="2" /><label for="radio3" class="css-label radGroup1"><span id="opt2"></span></label>
+
+					<input type="radio" name="radioBtn[]" id="radio4" class="css-checkbox"  value="3"/><label for="radio4" class="css-label radGroup1"><span id="opt3"></span></label>
+				
+				</td></tr></table>
+
+
+				<span class="nextBtn">NEXT</span>
+
+
+			</div>
+			<div id="scoreBox">scoreBox
+				<span id="correctNum"></span> OF 
+				<span id="totalNum"></span>
+				<span id="fact"></span>
+			</div>
 			<div id="bottomBox">
 				<span id="btns">
 				<button class="startBtn" type="button">START</button>

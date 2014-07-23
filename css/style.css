@@ -31,7 +31,7 @@ text-align: center;
 			/*padding: 0px;
 			width: 100%;*/
 
-	background-image:url('images/basketballcourt900x549.png');
+	background-image:url('../images/bballcourt900x549.png');
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	background-position:center; 
@@ -54,9 +54,10 @@ text-align: center;
 	background-color: #FFF;	
 
 	width: 60%;
+	/*margin-top: 3%;*/
 	margin-left: 20%;
 	right: 80%;
-	height:100px;
+	height:350px;
 }
 
 #scoreBox {
@@ -116,3 +117,63 @@ text-align: center;
 // ORANGE: #ED890E;		LT BLUE: #B5DBE6;			   //
 // GREEN: #9BBA59;		DRK BLUE: #33859C;			   //
 ///////////////////////////////////////////////////////*/
+
+input[type=radio].css-checkbox {
+	display:none;
+
+}
+
+input[type=radio].css-checkbox + label.css-label {
+	padding-left:37px;
+	height:32px; 
+	display:inline-block;
+	line-height:32px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:32px;
+	vertical-align:middle;
+	cursor:pointer;
+	margin-bottom: 40px;
+
+	text-align: center;
+
+	
+
+}
+
+input[type=radio].css-checkbox:checked + label.css-label {
+	background-position: 0 -32px;
+}
+
+label.css-label {
+	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_843c8caf79597dd7fce3f1b398bade8b.png);
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+}
+
+/* /////////// SUBMIT BUTTON/////////////*/
+.nextBtn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.nextBtn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
