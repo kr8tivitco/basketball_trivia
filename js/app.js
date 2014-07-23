@@ -117,19 +117,17 @@ $(document).ready(function() {
       randNumFunc();
 
 
-    $(".startBtn").click(function() {
-    //$("nextBtn").click(playGame);
-      //alert(arr);
-      //var ask = prompt("Enter Number 0-10", "");
-      //alert (questions[ask].ques);
-      //function playGame () {
+    $(".startBtn").click(playGame);
+    
+      function playGame () {
         //var j =0;
+        $(".table").show();
        askNum = arr[j];
-        alert(askNum);
+        //alert(askNum);
 
         //$("#question").html(questions[ask].ques); WORKING
 
-        $("#quesBox").html(questions[askNum].ques);
+        $("#trivaQues").html(questions[askNum].ques);
       
         $("#opt0").html(questions[askNum].opt[0]);
         //alert("option 0");
@@ -141,26 +139,84 @@ $(document).ready(function() {
         //alert("option 3");
 
         j++;
+        $("#correct").html(correctNum + " OF ");
+        $(".total").html(j);
+        $(".startBtn").hide();
+        $(".nextBtn").show();
+        $(".submitBtn").show();
 
-        $("#totalNum").html(j);
-    });
 
-        $(".nextBtn").click(function () { 
-          alert(askNum);
-          if (($('input[type="radio"]:checked').val()) == questions[askNum].answ){
-            playerAnsw[k] = $('input[type="radio"]:checked').val();
-            k++;
-            correctNum++;
-          } else {
-            incorrect++;
-          }
-            alert(($('input[name="radioBtn[]"]:checked').val()) +" == "+ questions[askNum].answ + "   Array PlayerAnswer = " + playerAnsw);
+    }
+
+    $(".submitBtn").click(nextFunc);
+          
+        function nextFunc () { 
+            if ($('input[type="radio"]:checked').length === 0) {
+              $("#warning").html("You Must Make A Selection");
+              
+            } else if (($('input[type="radio"]:checked').val()) == questions[askNum].answ) {
+              correctNum++;
+              //proceedFunc();
+              $("#fact").html(questions[askNum].fact);
+                playerAnsw[k] = $('input[type="radio"]:checked').val();
+             // alert("Radion Button Value = "+ $('input[name="radioBtn[]"]:checked').val() +" Anwers to Question=  "+ questions[askNum].answ + "   Array PlayerAnswer = " + playerAnsw + "   Correct # = " + correctNum + "   Incorrect # = " + incorrectNum);
+            $("#correct").html(correctNum + " OF ");    
+
+            } else {
+              incorrectNum++;
+              //proceedFunc();
+              $("#fact").html(questions[askNum].fact);
+                playerAnsw[k] = $('input[type="radio"]:checked').val();
+              //alert("Radion Button Value = "+ $('input[name="radioBtn[]"]:checked').val() +" Anwers to Question=  "+ questions[askNum].answ + "   Array PlayerAnswer = " + playerAnsw + "   Correct # = " + correctNum + "   Incorrect # = " + incorrectNum);
+              $("#correct").html(incorrectNum + " OF "); 
+              
+            }
+              $("#warning").html("");   
+
             
+        }
 
-           $("#fact").html(questions[askNum].fact);
-              //alert(questions[askNum].fact);
-        
-        });
+    
+    $(".nextBtn").click(proceedFunc);    
+
+        function proceedFunc () {
+
+            if ($('input[type="radio"]:checked').length === 0) {
+              $("#warning").html("You Must Make A Selection");
+              
+            }  else if (playerAnsw[k] == null) {
+               $("#warning").html("You need to SUBMIT before moving on"); 
+            } else {
+              //playerAnsw[k] = $('input[type="radio"]:checked').val();
+                k++;
+           
+              //  alert("Radion Button Value = "+ $('input[name="radioBtn[]"]:checked').val() +" Anwers to Question=  "+ questions[askNum].answ + "   Array PlayerAnswer = " + playerAnsw + "   Correct # = " + correctNum + "   Incorrect # = " + incorrectNum);
+
+           
+              //$("#correct").html(correctNum);
+
+              $('input[type="radio"]').attr('checked', false);
+              $("#warning").html("");
+
+              if (j <5 ) {
+                playGame();
+              } else {
+                gameOver();
+              }
+            }
+
+        }
+
+        function gameOver () {
+
+          $(".overlay").fadeIn(1000);
+
+
+          /*--- Hide information modal box ---*/
+          $("a.ovrClose").click(function(){
+            $(".overlay").fadeOut(1000);
+          });
+        }
 
 });
 

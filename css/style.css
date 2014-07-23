@@ -5,15 +5,15 @@
 The height ajusts itself to the content.*/
 /*///////////////////CENTER///////////////////////////////////// */
 /*Temporary Outline Outline*/
-* {
+/* {
 	outline: 1px dotted black;
 
-}
+}*/
 
 body {
 background-color: #e1ddd9;
-font-size: 12px;
-font-family: Verdana, Arial, Helvetica, SunSans-Regular, Sans-Serif;
+font-size: 26px;
+font-family: Arial;
 color:#564b47;
 margin: 0px 140px  20px 140px;
 text-align: center;
@@ -42,31 +42,38 @@ text-align: center;
 
 }
 #quesBox {
-	background-color: #B5DBE6;
+	/*background-color: #B5DBE6;*/
 
 	width: 60%;
 	margin-left: 20%;
-	/*margin-top: 5%;*/
+	margin-top: 12%;
 	right: 80%;
 	height:100px;
 }
+#trivaQues {
+	margin-top: 5%;
+	display: inline-block;
+	color:#216477;
+
+}
+
 #ansBox {
-	background-color: #FFF;	
+	/*background-color: #FFF;*/	
 
 	width: 60%;
 	/*margin-top: 3%;*/
 	margin-left: 20%;
 	right: 80%;
-	height:350px;
+	height:300px;
 }
 
 #scoreBox {
-	background-color: #B5DBE6;
+	/* background-color: #B5DBE6;*/
 
 	width: 60%;
 	margin-left: 20%;
 	right: 80%;
-	height:100px;
+	height:390px;
 }
 
 #bottomBox {
@@ -76,51 +83,29 @@ text-align: center;
 
 	/*background-color: #FFF;	*/
 
-	height:300px;
+	height:75px;
 
 	/*opacity:0.65;*/
 }
-.startBtn {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #599bb3));
-	background:-moz-linear-gradient(top, #599bb3 5%, #599bb3 100%);
-	background:-webkit-linear-gradient(top, #599bb3 5%, #599bb3 100%);
-	background:-o-linear-gradient(top, #599bb3 5%, #599bb3 100%);
-	background:-ms-linear-gradient(top, #599bb3 5%, #599bb3 100%);
-	background:linear-gradient(to bottom, #599bb3 5%, #599bb3 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#599bb3',GradientType=0);
-	background-color:#599bb3;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Verdana;
-	font-size:20px;
-	padding:5px 14px;
-	text-decoration:none;
-}
-.startBtn:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #599bb3));
-	background:-moz-linear-gradient(top, #599bb3 5%, #599bb3 100%);
-	background:-webkit-linear-gradient(top, #599bb3 5%, #599bb3 100%);
-	background:-o-linear-gradient(top, #599bb3 5%, #599bb3 100%);
-	background:-ms-linear-gradient(top, #599bb3 5%, #599bb3 100%);
-	background:linear-gradient(to bottom, #599bb3 5%, #599bb3 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#599bb3',GradientType=0);
-	background-color:#599bb3;
-}
-.startBtn:active {
-	position:relative;
-	top:1px;
-}
 
 
-/* /////////// BASKETBALL COURT PNG COLORS///////////////
-// ORANGE: #ED890E;		LT BLUE: #B5DBE6;			   //
-// GREEN: #9BBA59;		DRK BLUE: #33859C;			   //
-///////////////////////////////////////////////////////*/
+/* /////////// BASKETBALL COURT PNG COLORS//////////////////////////////
+//            ORANGE: #ED890E;		LT BLUE: #B5DBE6;	              //
+// GREEN: #9BBA59;		DRK BLUE: #33859C;	DEEP PURPLE: #A71544;	  //
+//////////////////////////////////////////////////////////////////////*/
 
+table {
+	display: none;
+
+	margin-left: 20%;
+	right: 80%;
+	text-align: center;
+
+}
 input[type=radio].css-checkbox {
 	display:none;
 
+	
 }
 
 input[type=radio].css-checkbox + label.css-label {
@@ -135,14 +120,11 @@ input[type=radio].css-checkbox + label.css-label {
 	cursor:pointer;
 	margin-bottom: 40px;
 
-	text-align: center;
-
-	
-
 }
 
 input[type=radio].css-checkbox:checked + label.css-label {
 	background-position: 0 -32px;
+
 }
 
 label.css-label {
@@ -153,10 +135,11 @@ label.css-label {
 			-moz-user-select: none;
 			-ms-user-select: none;
 			user-select: none;
+
 }
 
-/* /////////// SUBMIT BUTTON/////////////*/
-.nextBtn {
+/* /////////// Submit/Next/Start/ BUTTONS/////////////*/
+.nextBtn, .submitBtn, .startBtn {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -171,9 +154,96 @@ label.css-label {
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+
+
+}
+.nextBtn, .submitBtn {
+	display: none;
 }
 
-.nextBtn:hover {
+.nextBtn:hover, .submitBtn:hover, .startBtn:hover {
   background: #3cb0fd;
   text-decoration: none;
+}
+
+#warning, #fact {
+	color: #A71544;
+
+}
+/* MODAL OVERLAY*/
+.overlay {
+	width: 100%;
+	height: 100%;
+	color: #ED890E;		
+	background: #9BBA59;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	z-index: 1000;
+	display: none;
+
+}
+
+.content {
+	color: #fff;
+	background: #e74c3c;
+	position: relative;
+	height: auto;
+	width: 600px;
+	border-radius: 3px;
+	top: 15%;
+	margin: auto auto;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.ovrContent h3 {
+	margin: 0;
+	padding: 0.4em;
+	text-align: center;
+	font-size: 2.4em;
+	font-weight: 300;
+	opacity: 0.8;
+	background: rgba(0,0,0,0.1);
+	border-radius: 3px 3px 0 0;
+}
+
+.ovrContent > div {
+	padding: 15px 40px 30px;
+	margin: 0;
+	font-weight: 300;
+	font-size: 1.15em;
+}
+
+.ovrContent > div p {
+	margin: 0;
+	padding: 10px 0;
+	line-height: 2em;
+	text-align: justify;
+}
+
+.ovrContent > div ul {
+	margin-bottom: -30px;
+	padding: 0 0 30px 20px;
+	text-align: left;
+}
+
+.ovrContent > div ul li {
+	padding: 5px 0;
+	display: block;	
+	list-style-type: disc;
+	line-height: 1.5em;
+}
+
+.ovrContent > div ul li strong{
+	text-decoration: underline;
+}
+
+.ovrContent > div a {
+	font-size: 0.8em;
+	background: #1F253D;
+	color: #95a5a6;
+	padding: 0.5em 2em;
+	margin-bottom: 50px;
+	border-radius: 3px;
 }

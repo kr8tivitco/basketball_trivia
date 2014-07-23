@@ -21,13 +21,31 @@
 </head>
 
 <body>
-		<div id="content">CONTENT
+		<div id="content">
+			<div class="overlay" id="modal">
+				<div class="ovrContent">
+					<h3>How Did I Do?</h3>
+					<div>
+						<p>This is a Hot or Cold Number Guessing Game. The game goes like this: </p>
+						<ul>
+							<li>1. I pick a <strong>random secret number</strong> between 1 to 100 and keep it hidden.</li>
+							<li>2. You need to <strong>guess</strong> until you can find the hidden secret number.</li>
+							<li>3. You will <strong>get feedback</strong> on how close ("hot") or far ("cold") your guess is.</li>
+						</ul>
+						<p>So, Are you ready?</p>
+						<a class="ovrClose" href="#">Got It!</a>
+					</div>
+				</div>
+			</div>
+
 			<div id="quesBox">
-				<span id="question"></span>
+				<span id="trivaQues">WELCOME TO SPORTS TRIVIA</span>
+				<!--<span class="total"></span>				
+				<span id="question"></span>-->
 			</div>
 			<div id="ansBox">
 
-				<table><tr><td>
+				<table class="table"><tr><td>
 					<input type="radio" name="radioBtn[]" id="radio1" class="css-checkbox" value="0" /><label for="radio1" class="css-label radGroup1"><span id="opt0"></span></label> <!--</td><td>-->
 				
 					<input type="radio" name="radioBtn[]" id="radio2" class="css-checkbox" value="1"/><label for="radio2" class="css-label radGroup1"><span id="opt1"></span></label></td><td>
@@ -39,20 +57,23 @@
 				</td></tr></table>
 
 
+				<span class="startBtn">START</span>
+				<span class="submitBtn">SUBMIT</span>
 				<span class="nextBtn">NEXT</span>
-
+				<br><br><span id="warning"></span>
+				
 
 			</div>
-			<div id="scoreBox">scoreBox
-				<span id="correctNum"></span> OF 
-				<span id="totalNum"></span>
+			<div id="scoreBox">
+				<span id="correct"></span> 
+				<span class="total"></span><br><br>
 				<span id="fact"></span>
-			</div>
-			<div id="bottomBox">
+			<!--</div>
+			<!--<div id="bottomBox">
 				<span id="btns">
 				<button class="startBtn" type="button">START</button>
 				</span>
-			</div>
+			</div>-->
 
 		</div>
 		
